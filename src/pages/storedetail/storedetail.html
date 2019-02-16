@@ -1,0 +1,231 @@
+<!--
+  Generated template for the StoredetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{name}} 의 페이지</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-slides pager style="max-height:200px">
+    <ion-slide style="width:100% !important;" *ngFor="let slide of slides">
+        <img  (click)="enlarge(slide)" [src]="slide">
+    </ion-slide>
+  </ion-slides>
+    
+  <br>
+  <div class="desc" style=" padding:16px;">
+    <div style="font-size: 13px;"> {{name}} 소개 </div>
+    <div style="margin-top: 1em;
+    color: gray;">{{description}}</div>
+      
+  </div>
+  <br>
+  <hr>
+    <!-- <img *ngIf="descriptionImage!=undefined" src="{{descriptionImage}}"> -->
+    <!-- <ion-scroll  scrollX="true">
+        <img style="width:100px; height:100px;" src="{{firstImage}}">
+        <img style="width:100px; height:100px;" src="{{secondImage}}">
+        <img style="width:100px; height:100px;" src="{{thirdImage}}">
+        <img style="width:100px; height:100px;" src="{{fourthImage}}">
+       </ion-scroll> -->
+
+        <!-- <div  *ngFor="let r of reservation" style="padding-left:0;"  >
+        <div>
+          <p class="reserve">  {{r.name}} {{r.time}} </p>
+          <button class="mybtn" ion-button (click)="join(r)" >Join
+          </button></div>
+         
+          </div> -->
+          <br>
+          <div *ngIf="facility!=undefined" class="desc" style=" padding:16px;">
+            <div style="font-size: 13px;"> 부대시설 </div>
+            <div style="margin-top: 1em;
+            color: gray;">{{facility}}</div>
+              <br>
+              <hr>
+          </div>
+          
+
+
+          <div style="padding:16px;" *ngIf="joinn">
+              &nbsp;{{month}}월
+              <br>
+            <br>
+            <div *ngIf="dayofweek!='false'" class="dateclass">
+              <!-- <span  style="left: 22px;
+              text-align: center;
+              position: relative;">
+            
+                {{dayofweek.substring(0,1)}}
+              </span> -->
+              <span
+              [ngClass]="(first == true) ? 'bold' : 'normal'"
+              (click)="selectDayy(0)"
+              style="
+border-radius: 20px;
+    font-size: 11px;
+    left: 0px;
+    position: relative;
+    padding: 0.5rem;">
+                {{today}}
+              </span>
+            </div>
+           <div *ngIf="dayofweek1!='false'" class="dateclass">
+            
+            <span
+            [ngClass]="(second == true) ? 'bold' : 'normal'"
+            (click)="selectDayy(1)"
+            style="
+            border-radius: 20px;
+            left: 0px;font-size: 11px;
+            position: relative;
+            padding: 0.5rem;">
+              {{today+1}}
+            </span>
+
+           </div>
+           <div *ngIf="dayofweek2!='false'" class="dateclass">
+            
+            <span
+            [ngClass]="(third == true) ? 'bold' : 'normal'"
+            (click)="selectDayy(2)"
+            style="
+            border-radius: 20px;
+            left: 0px; font-size: 11px;
+            position: relative;
+            padding: 0.5rem;">
+              {{today+2}}
+            </span>
+
+           </div>
+           <div *ngIf="dayofweek3!='false'" class="dateclass">
+          
+            <span
+            [ngClass]="(fourth == true) ? 'bold' : 'normal'"
+            (click)="selectDayy(3)"
+            style="
+            border-radius: 20px;
+            font-size: 11px;
+            left: 0px;
+            position: relative;
+            padding: 0.5rem;">
+              {{today+3}}
+            </span>
+
+           </div>
+           <div *ngIf="dayofweek4!='false'" class="dateclass">
+            
+            <span
+            [ngClass]="(fifth == true) ? 'bold' : 'normal'"
+            (click)="selectDayy(4)"
+            style="
+            border-radius: 20px;
+           font-size: 11px;
+            left: 0px;
+            position: relative;
+            padding: 0.5rem;">
+              {{today+4}}
+            </span>
+
+           </div>
+           <div *ngIf="dayofweek5!='false'" class="dateclass">
+            
+            <span
+            [ngClass]="(sixth == true) ? 'bold' : 'normal'"
+            (click)="selectDayy(5)"
+            style="
+            border-radius: 20px;
+            font-size: 11px;
+            left: 0px;
+            position: relative;
+            padding: 0.5rem;">
+              {{today+5}}
+            </span>
+
+           </div>
+           <div *ngIf="dayofweek6!='false'" class="dateclass">
+            
+            <span
+            [ngClass]="(seventh == true) ? 'bold' : 'normal'"
+            (click)="selectDayy(6)"
+            style="font-size: 11px;
+            border-radius: 20px;
+            left: 0px;
+            position: relative;
+            padding: 0.5rem;">
+              {{today+6}}
+            </span>
+
+           </div>
+           <div *ngIf="dayofweek7!='false'" class="dateclass">
+            
+            <span
+            [ngClass]="(eighth == true) ? 'bold' : 'normal'"
+            (click)="selectDayy(7)"
+            style="
+            font-size: 11px;
+    border-radius: 20px;
+    left: 0px;
+    position: relative;
+    padding: 0.5rem;">
+              {{today+7}}
+            </span>
+
+           </div>
+           
+         
+              <ion-scroll  scrollX="true">
+                <span *ngFor="let r of reservationfinal">
+                    <button  disabled *ngIf="r.disabled==true" class="mybtn" ion-button  >
+                      {{r.time}}
+                     </button>
+                     <button (click)="join(r)"  *ngIf="r.disabled==false" class="mybtn" ion-button  >
+                        {{r.time}}
+                     </button>
+                </span>
+          
+        </ion-scroll>
+        <br>
+        <hr>
+        <br>
+   <!-- <p style="    font-size: 13px;">{{name}}</p>   -->
+   <div style="font-size: 13px;"> 연락처 </div>
+   
+   <div style="margin-top: 1em;
+   color: gray;
+   width: 50%;
+   float: left;">{{tel}}</div>
+   <button style="    border: solid 1px;
+   background: aliceblue;
+   margin-top: 1em;
+   width: 40%;
+   min-height: 25px;" (click)="call(tel)" >
+전화걸기
+   </button>
+              <br>
+              <hr>
+
+  
+              <br>
+              <div style="font-size: 13px;"> 위치 </div>
+    <p style="   margin-top:20px; font-size: 11px;">{{address}}</p> 
+          </div>
+          <br>
+          <hr>
+          <div id="mapp" ></div>
+
+          
+                           
+    
+
+
+</ion-content>

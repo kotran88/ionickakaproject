@@ -1,0 +1,148 @@
+<!--
+  Generated template for the RequestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>request</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary">가게명</ion-label>
+      <ion-input placeholder="Text Input" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">설명입력</ion-label>
+      <ion-textarea row="7" style="height:70px;" placeholder="Text Input" [(ngModel)]="description"></ion-textarea >
+        
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">부대시설</ion-label>
+      <ion-input placeholder="부대시설을 입력해주세요" [(ngModel)]="facility"></ion-input>
+        
+    </ion-item>
+  </ion-list>
+
+
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary">주소입력</ion-label>
+      <ion-input placeholder="서울시 강남구 논현로 10길" [(ngModel)]="address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">전화번호</ion-label>
+      <ion-input placeholder="전화번호" type="number" [(ngModel)]="tel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">사업자 등록번호</ion-label>
+      <ion-input placeholder="사업자 등록번호" type="number" [(ngModel)]="regnumber"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">업종업태</ion-label>
+      <ion-input placeholder="업종업태" [(ngModel)]="type"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">비상연락번호</ion-label>
+      <ion-input placeholder="비상연락번호" type="number" [(ngModel)]="emergencytel"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary">대표자명</ion-label>
+        <ion-input placeholder="대표자명" [(ngModel)]="representitive"></ion-input>
+      </ion-item>
+  </ion-list>
+  
+  <hr>
+
+
+
+
+  <button style="    background: transparent;
+  color: cornflowerblue;
+  top: 2rem;
+  width: 80%;
+  left: 10%;" ion-button (click)="takePhoto('main')" >대표사진
+  </button>
+  <img *ngIf="picurl" class="im" style="width:50%; margintext-align: center" src="{{picurl}}"/>
+  <button style="background: transparent;
+  color: cornflowerblue;
+  top: 2rem;
+  width: 80%;
+  left: 10%;" ion-button (click)="takePhoto('first')" >소개이미지1
+  </button>
+  <img *ngIf="firsturl" class="im" style="width:50%; margintext-align: center" src="{{firsturl}}"/>
+
+  <button style="background: transparent;
+  color: cornflowerblue;
+  top: 2rem;
+  width: 80%;
+  left: 10%;" ion-button (click)="takePhoto('second')" >소개이미지2
+  </button>
+  <img *ngIf="secondurl" class="im" style="width:50%; margintext-align: center" src="{{secondurl}}"/>
+
+  <button style="background: transparent;
+  color: cornflowerblue;
+  top: 2rem;
+  width: 80%;
+  left: 10%;" ion-button (click)="takePhoto('third')" >소개이미지3
+  </button>
+  <img *ngIf="thirdurl" class="im" style="width:50%; margintext-align: center" src="{{thirdurl}}"/>
+
+  <button style="background: transparent;
+  color: cornflowerblue;
+  top: 2rem;
+  width: 80%;
+  left: 10%;" ion-button (click)="takePhoto('fourth')" >소개이미지4
+  </button>
+  <img *ngIf="fourthurl" class="im" style="width:50%; text-align: center" src="{{fourthurl}}"/>
+
+  <button style="background: transparent;
+  color: cornflowerblue;
+  top: 2rem;
+  width: 80%;
+  left: 10%;" ion-button (click)="takePhoto('fifth')" >소개이미지5
+  </button>
+  <img *ngIf="fifthurl" class="im" style="width:50%; text-align: center" src="{{fifthurl}}"/>
+
+  <button style="background: transparent;
+  color: cornflowerblue;
+  top: 2rem;
+  width: 80%;
+  left: 10%;" ion-button (click)="takePhoto('sixth')" >소개이미지6
+  </button>
+  <img *ngIf="sixthurl" class="im" style="width:50%; margintext-align: center" src="{{sixthurl}}"/>
+
+  <button style="background: transparent;
+  color: cornflowerblue;
+  top: 2rem;
+  width: 80%;
+  left: 10%;" ion-button (click)="takePhoto('seventh')" >소개이미지7
+  </button>
+  <img *ngIf="seventhurl" class="im" style="width:50%; margintext-align: center" src="{{seventhurl}}"/>
+
+  <ion-list style="margin-top: 2em;">
+    <ion-item>
+      <ion-label color="primary">키워드입력</ion-label>
+      <ion-input  (ionChange)="keywordchanged()"  placeholder=",로 구분됩니다." [(ngModel)]="keywords"></ion-input>
+    </ion-item>
+    </ion-list>
+  
+  <button style="background: transparent;
+  color: black; top:2rem; width:80%;left:10%;border:solid 1px;" ion-button (click)="requesting()" >입점신청하기
+  </button>
+
+
+
+
+
+
+  
+</ion-content>

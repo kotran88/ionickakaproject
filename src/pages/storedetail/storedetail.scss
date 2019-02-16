@@ -1,0 +1,53 @@
+page-storedetail {
+    .scroll-content{
+        padding:0 !important;
+    }
+    .reserve{
+        width: 70%;
+    float: left;
+    vertical-align: middle;
+    height: 3.6rem;
+    line-height: 3.6rem;
+    }
+    #mapp{
+        height: 30%;
+        width: 100%;
+     }
+     .bold{
+        background:aliceblue;
+     }
+    .mybtn{
+        color: black;
+        width: 11%;
+        height: 2.8rem;
+        font-size: 11px;
+        background: aliceblue;
+    }
+    ion-scroll {
+        white-space: nowrap;
+        margin-top:3.9rem;
+        height: 50px;
+    }
+    // .scroll-content{
+    //     padding:0;
+    // }
+    
+    .dateclass{
+        width: 12%;
+           float: left;
+    }
+    // [padding] .scroll-content {
+    //     padding: 0px !important;
+    //     }
+    .scroll-x > .scroll-content{
+        padding: 0px !important;
+    }
+    .iconimage{
+        width: 20px;
+    height: 20px;
+    float: left;
+    margin-top: 0.2em;
+    margin-left: 1em;
+        background-image: url(./../assets/imgs/phone.png);
+    }
+}

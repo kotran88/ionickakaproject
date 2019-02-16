@@ -1,0 +1,40 @@
+<!--
+  Generated template for the StoremanagementPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>storemanagement</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item *ngFor="let reserve of newarrayy; let i = index" style="padding-left:0;"  >
+                <ion-card style="border-radius: 20px;" *ngIf="reserve?.name?.length" style="width:95%; left:5%;" >
+                
+                <ion-card-content>
+                   예약자명 : {{reserve.name}}<br>
+                   연락처 :     {{reserve.phone}}<br>
+                   총인원수 :     {{reserve.numberofpeople}}<br>
+                   예약일 :     {{reserve.month}}월 {{reserve.day}}일 {{reserve.time}}시<br>
+                   예약신청시간 :     {{reserve.requestDate}}<br>
+
+                   <button *ngIf="reserve.matched" ion-button (click)="disabledd(reserve,'toable')">해당 시간 활성화</button>
+                   <button *ngIf="!reserve.matched" ion-button (click)="disabledd(reserve,'todisable')">해당 시간 비활성화</button>
+                </ion-card-content>
+                </ion-card  >
+
+
+               
+    </ion-item>
+    
+</ion-list>
+
+</ion-content>

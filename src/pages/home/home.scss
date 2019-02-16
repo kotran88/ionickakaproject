@@ -1,0 +1,188 @@
+page-home {
+    .menu-inner{
+        width: 60%;
+    }
+    .scroll-content{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        // margin-left: 52px;
+        margin-right:-5px;
+        margin-left:2px;
+    }
+    ion-menu[type=reveal] {
+        z-index: 11111;
+    }
+    ion-backdrop{
+        display: -webkit-box;
+        opacity: 0.35;
+    }
+    .c{
+        .scroll-content{
+            margin-top: 0px;
+            margin-bottom: 56px;
+        }
+        .profile{
+          height: 15%;
+          background: aliceblue;
+          margin-top: 0;
+          text-align: center;
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+          p{
+              font-size: 1.2rem;
+              text-align: left;
+              float: left;
+              width: 60%;
+              margin: 0;
+              margin-left: 1rem;
+              margin-top: 1rem;
+          }
+        }
+        
+        img{
+            float: left;
+            object-fit: cover;
+            border-radius: 50%;
+            height: 60%;
+            width: 30%;
+            margin-left: 1.5rem;
+            margin-top: 2rem;
+        }
+        .left{
+          width: 50%;
+          margin-top:1rem;
+          float: right;
+          height: auto;
+        }
+        
+          top:0%;
+        .scroll-content{
+            .list list-md{
+                text-align: center;
+            }
+          top:0%;
+        }
+        
+    }
+    .scrolltest .scroll-content{
+        margin-top:0px;
+        margin-bottom:0px;
+    }
+    .text-input-md{
+        background:white;
+        margin: 5px 1px;
+    }
+    .mybtn{
+        color: black;
+        width: 11%;
+        height: 2.8rem;
+        font-size: 11px;
+        background: aliceblue;
+    }
+    ion-scroll {
+        white-space: nowrap;
+        margin-top:3.9rem;
+        height: 50px;
+    }
+    .item-md.item-block .item-inner {
+        /* padding-right: 8px; */
+        border-bottom: 1px solid #dedede;
+    }
+    .card-ios{
+        border-radius:20px;
+    }
+    .label-md {
+        
+        // margin-left:17px;
+        margin:auto;
+        border:solid 1px;
+    }
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+        background:aliceblue;
+    }
+    .image{
+        width: 100%;
+        height: 150px;
+        border-radius: 20px;
+    }
+    .toolbar-background-md {
+        background-color:aliceblue !important
+    }
+    .item-md.item-block .item-inner {
+    padding-right:0 !important;
+    }
+    ion-header {
+        height: 40px;//by default 56px
+      }
+      ion-navbar.toolbar {
+        min-height: 40px;
+      }
+    ion-label{
+        font-size: 13px;
+    }
+    .list-md {
+        margin:0;
+    }
+    .card-md{
+        border-radius: 20px;
+    }
+    .nomatched{
+        width: 100%;
+    height: 100%;
+    position: fixed;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 3rem;
+    }
+    .list{
+        left: 1%;
+    width: 100%;
+    right: 0;
+    position: relative;
+    }
+    .naver{
+        background: transparent;
+        top: 3%;
+        position: fixed;
+        width: 222px;
+        left: 5.6%;
+        height: 49px;
+        margin-left: 0;
+        margin-right: 0;
+        background-image: url(./../assets/imgs/kakaobtn.png);
+    }
+
+    #tabbar {
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 10;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%;
+        opacity: 0;
+        background: red;
+        opacity: 1;
+    }
+    .tabbutton{
+        color: #488aff;
+    padding: 0;
+    min-height: 5.6rem;
+    margin: 0;
+    text-align: center;
+    border-radius: 0;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    justify-content: center;
+    border: 0;
+    text-decoration: none;
+    background: none;
+    cursor: pointer;
+    }
+}

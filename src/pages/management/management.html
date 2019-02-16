@@ -1,0 +1,155 @@
+<!--
+  Generated template for the ManagementPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>management</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-datetime style="display: none;"
+  #timePicker (ionChange)="filter()"
+  displayFormat="HH:mm"
+  [(ngModel)]="myDateStart">
+</ion-datetime>
+<ion-datetime style="display: none;"
+  #timePicker2 (ionChange)="filter2()"
+  displayFormat="HH:mm" 
+  minuteValues="00,30"
+  [(ngModel)]="myDateEnd">
+</ion-datetime>
+<div class="storeInfo">
+    <div style="display: inline-table;
+  width: 100%;" class="description">
+    <p class="p">가게명</p> 
+    <p style="width: 100%;
+    display: -webkit-inline-box;">  {{storeName}}</p>
+  </div>
+
+  <div style="display: inline-table;
+  width: 100%;" class="description">
+    <p class="p">설명</p> <button class="btn" ion-button (click)="modify('description')" >수정
+    </button>
+    <p style="width: 100%;
+    display: -webkit-inline-box;">{{description}}</p>
+  </div>
+ 
+  <div style="display: inline-table;
+  width: 100%;" class="tel">
+
+    <p class="p">연락처 </p>
+    <button class="btn" ion-button (click)="modify('tel')" >수정
+    </button>
+    <p style="width: 100%;
+    display: -webkit-inline-box;"> {{tel}}</p>
+  </div>
+  <div *ngIf="descriptionImage"  style="display: inline-table;
+  width: 100%;" class="tel">
+
+    <p class="p">설명 이미지  </p>
+    <button class="btn" ion-button (click)="modify('descriptionImage')" >수정
+    </button>
+    <img *ngIf="descriptionImage" style="display: table-column;
+    width: 100%;
+    height: 200px;" src="{{descriptionImage}}">
+
+    <!-- <p style="width: 100%;
+    display: -webkit-inline-box;"> {{tel}}</p> -->
+  </div>
+ 
+  <div style="display: inline-table;
+  width: 100%;" class="tel">
+
+    <p class="p">메인이미지  </p>
+    <button class="btn" ion-button (click)="modify('mainImage')" >수정
+    </button>
+    <img style="display: table-column;
+    width: 100%;
+    height: 200px;" src="{{mainImage}}">
+  </div>
+  <div style="display: inline-table;
+  width: 100%;" class="tel">
+
+<p class="p">첫번째 이미지</p>
+    <button class="btn" ion-button (click)="modify('firstImage')" >수정
+    </button>
+    <img style="display: table-column;
+    width: 100%;
+    height: 200px;" src="{{firstImage}}">
+  </div>
+  <div style="display: inline-table;
+  width: 100%;" class="tel">
+ <p class="p">두번째 이미지</p>
+    <button class="btn" ion-button (click)="modify('secondImage')" >수정
+    </button>
+
+    <img style="display: table-column;
+    width: 100%;
+    height: 200px;" src="{{secondImage}}">
+  </div>
+  <div style="display: inline-table;
+  width: 100%;" class="tel">
+
+<p class="p">세번째 이미지</p>
+    <button class="btn" ion-button (click)="modify('thirdImage')" >수정
+    </button>
+    <img style="display: table-column;
+    width: 100%;
+    height: 200px;" src="{{thirdImage}}">
+  </div>
+  <div style="display: inline-table;
+  width: 100%;" class="tel">
+
+<p class="p">네번째 이미지</p>
+    <button class="btn" ion-button (click)="modify('fourthImage')" >수정
+    </button>
+    <img style="display: table-column;
+    width: 100%;
+    height: 200px;" src="{{fourthImage}}">
+  </div>
+  
+ 
+</div>
+<div class="operatingtime">
+  <ion-label style="width: 30%;
+      float: left;">운영시간</ion-label>
+      <button (click)="start()" ion-button>{{myDateStart}}</button> <button (click)="end()" ion-button>{{myDateEnd}}</button>
+</div>
+<div class="timeinterval">
+  <ion-label style="width: 30%;
+  float: left;">시간간격</ion-label>
+    <ion-checkbox [(ngModel)]="thirty" (click)="checkbox(1)"></ion-checkbox>30분 <ion-checkbox (click)="checkbox(2)" [(ngModel)]="sixty" ></ion-checkbox>60분 <ion-checkbox [(ngModel)]="ninety" (click)="checkbox(3)"></ion-checkbox>90분 
+</div>
+<div class="peoplenumber">
+  <ion-label style="width: 30%; left: 1.2em;
+  display: inline-table;
+  position: absolute;
+  float: left;">가능인원</ion-label>
+    <ion-input style="width: 60%;
+    float: right;
+    display: inline-table;" type="number" placeholder="인원입력" [(ngModel)]="numberofpeople" ></ion-input>
+</div>
+<!-- <div class="keyword">
+  <ion-label style="width: 30%; left: 1.2em;
+  display: inline-table; top: 9.5em;
+  position: absolute;
+  float: left;">키워드입력</ion-label>
+    <ion-input style="width: 60%;
+    float: right;
+    display: inline-table;"  (ionChange)="keywordchanged()"  placeholder=",로 구분됩니다." [(ngModel)]="keywords" ></ion-input>
+
+</div> -->
+<button style="background: transparent;
+color: black; top:2rem; width:80%;left:10%;border:solid 1px;" ion-button (click)="confirm()" >저장
+</button>
+    
+      
+      <!-- <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="myDate"></ion-datetime> -->
+</ion-content>

@@ -1,0 +1,270 @@
+<ion-header>
+    <ion-navbar style="background: aliceblue">
+     
+      <button style="left: 0px;
+      position: absolute;
+      height: 3rem;
+      top: 0;
+      background: transparent;
+      color: rgb(240, 224, 224);
+      box-shadow: none;" (click)="gotoback();"  *ngIf="matchedKeyword!='t'" ion-button >
+          <ion-icon style="color:black;" name="arrow-round-back"></ion-icon>
+        </button>
+     
+      <div style="    text-align: center;" class="title">
+        합
+      </div>
+      <button style="right: 0px;
+      position: absolute;" ion-button menuToggle>
+          <ion-icon right name="menu"></ion-icon>
+        </button>
+      <!-- <button class="nav" (click)="map.centerLocation()" ion-button >
+          <ion-icon style="color: white;" name="navigate" ></ion-icon>
+        </button>
+        <button class="nav"  ion-button (click)="viewRequestedAll()">쿠폰내역보기</button> -->
+        
+      
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content class="home">
+      <ion-scroll class="scrolltest" style="margin-top:20px; margin-bottom:0;" scrollX="true">
+        <button (click)="category('all')" class="mybtn" ion-button  >
+          All
+        </button>
+               <button (click)="category('Hair')" class="mybtn" ion-button  >
+                 Hair
+               </button>
+               <button (click)="category('Nail')" class="mybtn" ion-button  >
+                  Nail
+                </button>
+                <button (click)="category('Skincare')" class="mybtn" ion-button  >
+                    Skincare
+                  </button>
+                  <button (click)="category('Massage')" class="mybtn" ion-button  >
+                      Massage
+                    </button>
+                    <button (click)="category('Makeup')" class="mybtn" ion-button  >
+                        Makeup
+                      </button>
+                      <button (click)="category('Waxing')" class="mybtn" ion-button  >
+                          Waxing
+                        </button>
+                        <button (click)="category('Tanning')" class="mybtn" ion-button  >
+                            Tanning
+                          </button>
+                  <button (click)="category('Diet')" class="mybtn" ion-button  >
+                      Diet
+                    </button>
+
+                    <button (click)="category('Tattoo')" class="mybtn" ion-button  >
+                      Tattoo
+                    </button>
+                    <button (click)="category('Plastic')" class="mybtn" ion-button  >
+                        Plastic surgery
+                      </button>
+                      <button (click)="category('PetGrooming')" class="mybtn" ion-button  >
+                          PetGrooming
+                        </button>
+
+    
+  </ion-scroll>
+    <!-- <p (click)="locate()" style="    margin-top: 35px; text-align: center;"> 현재위치 {{location}} <ion-icon name="locate"></ion-icon></p> -->
+    <p style="text-align: center;" *ngIf="matchedKeyword!='false'&&matchedKeyword!='t'">키워드 "{{matchedKeyword}}" 와(과) 매치된 목록입니다.</p>
+    <p style="text-align: center;" *ngIf="matchedStation">"{{matchedStation}}" 와(과) 거리가 5KM이내 목록입니다.</p>
+    <p (click)="locate()" style="text-align: center;"> 현재위치 {{location}} <ion-icon name="locate"></ion-icon></p>
+    <p *ngIf="storearray.length==0" style="text-align: center;">{{storemention}}</p>
+    <ion-list>
+                    <ion-item *ngFor="let store of storearray; let i = index" style="padding-left:0;"  >
+                                <!-- <ion-card style="border-radius: 20px;" *ngIf="store?.name?.length" style="width:95%; left:5%;" >
+                                <ion-card-header style="text-align:center">
+                                  <img class="image" style="border-radius: 20px;" (click)="detail(store)" src="{{store.mainImage}}">
+                                 </ion-card-header>
+                                <ion-card-content>
+                                    {{store.name}}<br>
+                                        {{store.address}}<br>
+                                        {{store.tel}}<br>
+                                </ion-card-content>
+                                </ion-card  > -->
+
+                                  <img class="image" style="border-radius: 20px;" (click)="detail(store)" src="{{store.mainImage}}">
+                                  <br>
+                                  <span> {{store.name}}</span>
+                                   <br>
+                                   <span style="font-size: 10px;"> {{store.address}}</span>
+                                       <br>
+                                       <span style="font-size: 10px;"> {{store.tel}}</span>
+                                       <br>
+                               
+                    </ion-item>
+                    
+            </ion-list>
+            <p class="nomatched"*ngIf="matchedKeyword=='false'">매치된 매장이 없습니다.</p>
+<!--     
+      <button (click)="kakaoLogin()">카카오톡 로그인</button>
+      <button (click)="kakaoLogout()">카카오톡 나가기</button>
+      <button (click)="getSession()">세션확인</button>
+
+    ㄹㄹㄹㄹ
+    <button (click)="share()">sharing</button> -->
+   
+    
+  </ion-content>
+  <div style="left: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 10;
+    height:7%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    opacity: 0;
+    background: aliceblue;
+    opacity: 1;" id="tabber" class="tabber">
+      <a href="" style=" color: #488aff;
+      padding: 0;
+      min-height: 5.6rem;
+      margin: 0;
+      text-align: center;
+      border-radius: 0;
+      position: relative;
+      z-index: 0;
+      display: flex;
+      overflow: hidden;
+      -webkit-box-flex: 1;
+      width: 30%;
+      justify-content: center;
+      border: 0;
+      text-decoration: none;
+      background: none;
+      left: 0;
+      cursor: pointer;" class="tabbutton">
+      <ion-icon style="font-size: 2em;
+      margin-top: 0.2em;" name="home"></ion-icon>
+    </a>
+    <a href="#" style=" color: #488aff;
+    padding: 0;
+    min-height: 5.6rem;
+    margin: 0;
+    text-align: center;
+    width: 30%;
+    border-radius: 0;
+    
+    position: relative;
+    z-index: 0;
+    display: flex;
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    justify-content: center;
+    border: 0;
+    text-decoration: none;
+    background: none;
+    left: 5%;
+    cursor: pointer;" class="tabbutton"
+     (click)="search();"
+    >
+    
+    <ion-icon style="font-size: 2em;
+    margin-top: 0.2em;" name="search"></ion-icon>
+  </a>
+<a href="#" style=" color: #488aff;
+padding: 0;
+min-height: 5.6rem;
+width: 30%;
+margin: 0;
+text-align: center;
+border-radius: 0;
+position: absolute;
+z-index: 0;
+display: flex;
+overflow: hidden;
+-webkit-box-flex: 1;
+justify-content: center;
+border: 0;
+text-decoration: none;
+background: none;
+right: 0;
+cursor: pointer;" class="tabbutton">
+ <ion-icon (click)="mypage();" style="font-size: 2em;
+ margin-top: 0.2em;" name="person"></ion-icon>
+</a>
+
+    </div>
+  <ion-menu class="ionmenu" [content]="content"  side="right">
+      <ion-content class="c">
+          
+          
+         <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+            
+
+            </button>
+            
+            <div *ngIf="logined=='true'" class="profile">
+                <img class="img" src="{{imageUrl}}"/>
+                <div class="left" >
+                  <p style="line-height: 6rem;">{{name}} 님</p>
+                  
+                </div>
+                <div class="right">
+                 
+                </div>
+                
+            </div>
+            <div  *ngIf="logined=='false'||logined==undefined||logined==''" class="profile">
+  
+              <button style="    background: transparent;
+              color: black;
+              top: 2rem;
+              /* height: 5%; */
+              border: solid 1px;
+              width: 70%;
+              /* left: 15%; */
+              font-size: 13px;" ion-button (click)="kakaoLogin()" >카카오톡 로그인
+              </button>
+              <!-- <button class="naver"  icon-left (click)="kakaoLogin()" > </button> -->
+            </div>
+            <ion-list>
+                <ion-item >
+                    버전 정보 1.0.0 
+                  </ion-item>
+                  <ion-item >
+                      이용약관 
+                    </ion-item>
+                    <ion-item >
+                      위치정보 이용약관
+                    </ion-item>
+                    <ion-item *ngIf="flag=='승인됨'" (click)="requesttoopen()" >
+                      설정페이지
+                    </ion-item>
+                    <ion-item (click)="requesttoconfig()" >
+                      {{requestFlag}}
+                      </ion-item>
+                      
+                     
+            </ion-list>
+            <button style="background: aliceblue;
+            color: black;
+            top: 2rem;
+            height: 5%;
+            width: 70%;
+            left: 15%;
+            font-size: 13px;" ion-button (click)="share()" >친구에게 알리기
+                </button>
+
+                <button *ngIf="logined=='true'" style="background: aliceblue;
+                color: black;
+                top: 2rem;
+                height: 5%;
+                width: 70%;
+                left: 15%;
+                font-size: 13px;" ion-button (click)="logout()" >로그아웃
+                </button>
+            
+    
+  </ion-content>
+  </ion-menu>
+  
+  <ion-nav id="nav" #content [root]="rootPage"></ion-nav>

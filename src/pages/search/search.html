@@ -1,0 +1,30 @@
+<!--
+  Generated template for the SearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>search</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2 style="text-align: center">위치 지정 하기</h2>
+    <div id="map" ></div>
+
+    <button class="mybtn" ion-button (click)="subway()" >지하철
+    </button>
+    <button class="mybtn" ion-button (click)="findbyaddress()" >주소
+      </button>
+      <button class="mybtn" ion-button (click)="nowlocation()" >현위치
+        </button><br><br>
+
+        <h2> 최근 위치 </h2>
+
+        
+</ion-content>

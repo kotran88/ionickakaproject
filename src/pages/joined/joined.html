@@ -1,0 +1,39 @@
+<!--
+  Generated template for the JoinedPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>예약</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  {{name}} 님<br>
+  놀러가실꺼죠?<br><br>
+
+  {{storeName}} 가실 시간은<br>
+  {{newnewtime}} 입니다. 
+  {{newtime}}
+
+<hr>
+  <ion-input class="inputi"  [(ngModel)]="reserver" placeholder="예약자 성함을 입력하세요(예: 홍길동"></ion-input>
+  <hr>
+<br>
+<ion-input class="inputi"  [(ngModel)]="phone"  placeholder="휴대폰 번호를 입력하세요(예: 0109998598"></ion-input>
+<hr>
+<br>
+
+<ion-input class="inputi"  [(ngModel)]="numberofpeople"  placeholder="참석인원을 알려주세요(예: 3)"></ion-input>
+<hr>
+<button style="border-radius: 10px; background: transparent;
+color: black; top:2rem; width:80%;left:10%;border:solid 1px;" ion-button (click)="finishing()" >Join Us
+</button>
+
+</ion-content>
